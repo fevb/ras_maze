@@ -15,7 +15,7 @@ The following parameters can be set when starting the node:
 
 To start the node do:
 
-```rosrun ras_maze_map ras_maze_map_node _map_file:=/path/to-file _map_frame=/frame _map_topic=/topic```
+```rosrun ras_maze_map ras_maze_map_node _map_file:=/path/to_file _map_frame=/frame _map_topic=/topic```
 
 ## File format
 
