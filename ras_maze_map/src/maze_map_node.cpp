@@ -68,7 +68,7 @@ int main(int argc, char **argv)
     string _map_topic;
     n.param<string>("map_file", _map_file, "maze_map.txt");
     n.param<string>("map_frame", _map_frame, "/map");
-    n.param<string>("map_frame", _map_topic, "/maze_map");
+    n.param<string>("map_topic", _map_topic, "/maze_map");
 
     ROS_INFO_STREAM("Loading the maze map from " << _map_file);
     ROS_INFO_STREAM("The maze map will be published in frame " << _map_frame);
