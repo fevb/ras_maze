@@ -41,3 +41,4 @@ Add a message of type `MarkerArray` and set the topic to the one specified when 
 
 You should be able to view the map in rviz. For the sample map above, it should look something like this:
 
+[Sample map](https://cloud.githubusercontent.com/assets/4798786/9958615/29ea0964-5e0c-11e5-8601-3f1309d0f132.png "Sample map")
