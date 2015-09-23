@@ -1,0 +1,29 @@
+<launch>
+
+  <arg name="map_file" default="map.txt" />
+  <arg name="map_frame" default="/odom" />
+
+  <!-- launch the kobuki simulation -->
+  <include file="$(find kobuki_softnode)/launch/full.launch" />
+
+  <!-- launch the distance sensors -->  
+  <include file="$(find ras_maze_distance_sensor)/launch/distance_sensor.launch"/>
+
+  <!-- run the motors 
+  <node pkg="ras_lab1_motors" type="kobuki_motors_node" name="kobuki_motors" >
+    <remap from="/kobuki_motors/pwm" to="/kobuki/pwm" />
+    <remap from="/kobuki_motors/encoders" to="/kobuki/encoders" />
+  </node>
+  -->
+
+  <!-- load the world node -->
+  <node pkg="ras_maze_map" type="ras_maze_map_node" name="ras_maze_map_node">
+	 <param name="map_file" value="$(arg map_file)"/>
+	 <param name="map_frame" value="$(arg map_frame)"/>
+  </node>
+
+  <!-- run rviz -->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find ras_maze_launch)/config/maze.rviz" />
+
+
+</launch>

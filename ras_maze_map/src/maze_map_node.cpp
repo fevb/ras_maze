@@ -2,12 +2,12 @@
  *  world_node.cpp
  *
  *
- *  Created on: Aug 25, 2014
+ *  Created on: Sept 18, 2014
  *  Authors:   Rares Ambrus
  *            raambrus <at> kth.se
  */
 
-/* Copyright (c) 2014, Rares Ambrus, CVAP, KTH
+/* Copyright (c) 2015, Rares Ambrus, CVAP, KTH
    All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
@@ -129,6 +129,7 @@ int main(int argc, char **argv)
         wall_marker.scale.x = std::max(0.01,dist);
         wall_marker.pose.position.x = (x1+x2)/2;
         wall_marker.pose.position.y = (y1+y2)/2;
+        wall_marker.text=line_stream.str();
         tf::Quaternion quat; quat.setRPY(0.0,0.0,angle);
         tf::quaternionTFToMsg(quat, wall_marker.pose.orientation);
 
