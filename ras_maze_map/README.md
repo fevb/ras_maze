@@ -8,14 +8,16 @@ This package implements the maze map publisher. The map is read from a file and 
 The following parameters can be set when starting the node:
 
 * `map_file` - path to the map file (should be stored as ASCII). Default `maze_map.txt`
-* `map_frame` - TF frame in which to publish the map. Default `/map`
-* `map_topic` - topic name under which to publish the map. Default `/maze_map`
+
+The TF frame in which the map is published is `/map`
+
+The topic name under which the map is published is `/maze_map`
 
 ## Run
 
 To start the node do:
 
-```rosrun ras_maze_map ras_maze_map_node _map_file:=/path/to_file _map_frame=/frame _map_topic=/topic```
+```rosrun ras_maze_map ras_maze_map_node _map_file:=/path/to_file ```
 
 ## File format
 
