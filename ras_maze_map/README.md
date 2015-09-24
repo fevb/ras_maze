@@ -10,6 +10,7 @@ The following parameters can be set when starting the node:
 * `map_file` - path to the map file (should be stored as ASCII). Default `maze_map.txt`
 
 The TF frame in which the map is published is `/map`
+
 The topic name under which the map is published is `/maze_map`
 
 ## Run
