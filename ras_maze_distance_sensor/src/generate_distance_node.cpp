@@ -207,8 +207,8 @@ public:
 
     bool getMarkerForDistanceSensor(visualization_msgs::Marker& marker, double& min_distance, std::string sensor_frame_name){
             tf::StampedTransform sensor_transform;
-            transform_listener_.waitForTransform("/odom", sensor_frame_name,ros::Time(0), ros::Duration(5.0) );
-            transform_listener_.lookupTransform("/odom", sensor_frame_name,ros::Time(0), sensor_transform);
+            transform_listener_.waitForTransform("/map", sensor_frame_name,ros::Time(0), ros::Duration(5.0) );
+            transform_listener_.lookupTransform("/map", sensor_frame_name,ros::Time(0), sensor_transform);
 
             // convert range to odom frame of ref and check for intersection
             geometry_msgs::PointStamped end_point;
@@ -217,7 +217,7 @@ public:
             end_point.point.y = -max_sensor_range_;
             end_point.header.stamp = ros::Time::now();
             end_point.header.frame_id = sensor_frame_name;
-            transform_listener_.transformPoint("/odom",sensor_transform.stamp_,end_point,sensor_frame_name,end_point_out);
+            transform_listener_.transformPoint("/map",sensor_transform.stamp_,end_point,sensor_frame_name,end_point_out);
 
             geometry_msgs::PointStamped start_point;
             geometry_msgs::PointStamped start_point_out;
@@ -225,7 +225,7 @@ public:
             start_point.point.y = 0;
             start_point.header.stamp = ros::Time::now();
             start_point.header.frame_id = sensor_frame_name;
-            transform_listener_.transformPoint("/odom",sensor_transform.stamp_,start_point,sensor_frame_name,start_point_out);
+            transform_listener_.transformPoint("/map",sensor_transform.stamp_,start_point,sensor_frame_name,start_point_out);
 
             end_point_out.point.x = round(end_point_out.point.x);
             end_point_out.point.y = round(end_point_out.point.y);
@@ -257,7 +257,7 @@ public:
             if (min_distance != std::numeric_limits<double>::max()){
 
                 // marker
-                marker.header.frame_id = "/odom";
+                marker.header.frame_id = "/map";
                 marker.header.stamp = ros::Time::now();
                 marker.lifetime = ros::Duration(1/30.0);
                 marker.ns = sensor_frame_name;
