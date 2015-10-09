@@ -4,8 +4,10 @@ RAS maze launch project
 To start the simulated robot run:
 
 ```
-roslaunch ras_maze_launch kobuki_maze.launch map_file:=/path_to_map/sample_map.txt x_offset:=0.5 y_offset:=0.5 theta_offset:=0.2
+roslaunch ras_maze_launch kobuki_maze.launch map_file:=name_of_map_file x_offset:=0.5 y_offset:=0.5 theta_offset:=0.2
 ```
+
+(Note: when launching the nodes with this launch file, the map file specified needs to exist in the `ras_maze_map/maps/` folder). 
 
 To drive the robot (using the arrow keys):
 
