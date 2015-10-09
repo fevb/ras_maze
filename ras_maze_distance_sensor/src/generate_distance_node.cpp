@@ -250,7 +250,12 @@ public:
                             min_distance = distance;
                             min_intersection_point = intersection_point;
                         }
-                    }
+                    } else{
+			if (distance < min_sensor_range_) {
+				min_distance=std::numeric_limits<double>::max();
+				break;
+			}
+		    }
                 }
             }
 

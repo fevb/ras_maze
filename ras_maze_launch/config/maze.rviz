@@ -6,11 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /RobotModel1
-        - /Marker1
-        - /MarkerArray1
-        - /Odometry1
-        - /MarkerArray2
       Splitter Ratio: 0.5
     Tree Height: 897
   - Class: rviz/Selection
@@ -114,22 +109,16 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
-    - Class: rviz/Marker
-      Enabled: true
-      Marker Topic: /wall_marker
-      Name: Marker
-      Namespaces:
-        {}
-      Queue Size: 100
-      Value: true
     - Class: rviz/MarkerArray
       Enabled: true
       Marker Topic: /dist_sensor_markers
       Name: MarkerArray
       Namespaces:
+        /distance_sensor_back_left_link: true
         /distance_sensor_back_right_link: true
         /distance_sensor_forward_left_link: true
         /distance_sensor_forward_right_link: true
+        /distance_sensor_front_left_link: true
         /distance_sensor_front_right_link: true
       Queue Size: 100
       Value: true
@@ -196,7 +185,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.8916
+      Distance: 10.7917
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
@@ -208,10 +197,10 @@ Visualization Manager:
         Z: 0.0234824
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 1.5698
+      Pitch: 1.5548
       Target Frame: base_footprint
       Value: Orbit (rviz)
-      Yaw: 5.35359
+      Yaw: 4.72358
     Saved: ~
 Window Geometry:
   Displays:
