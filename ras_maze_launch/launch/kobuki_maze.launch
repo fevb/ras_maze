@@ -5,22 +5,21 @@
   <arg name="y_offset" default="0.2"/>	
   <arg name="theta_offset" default="0.0"/>	
 
-
   <!-- launch the kobuki simulation -->
-  <include file="$(find kobuki_softnode)/launch/full.launch" />
+  <include file="$(find kobuki_softnode)/launch/full.launch"  />
 
   <!-- launch the distance sensors -->  
   <include file="$(find ras_maze_distance_sensor)/launch/distance_sensor.launch"/>
 
-  <!-- run the motors 
-  <node pkg="ras_lab1_motors" type="kobuki_motors_node" name="kobuki_motors" >
+  <!-- run the motors -->
+  <node pkg="ras_lab1_motors" type="kobuki_motors_node" name="kobuki_motors"  >
     <remap from="/kobuki_motors/pwm" to="/kobuki/pwm" />
     <remap from="/kobuki_motors/encoders" to="/kobuki/encoders" />
   </node>
-  -->
+  
 
   <!-- load the world node -->
-  <node pkg="ras_maze_map" type="ras_maze_map_node" name="ras_maze_map_node">
+  <node pkg="ras_maze_map" type="ras_maze_map_node" name="ras_maze_map_node"  >
 	 <param name="map_file" value="$(find ras_maze_map)/maps/$(arg map_file)"/>
   </node>
 
